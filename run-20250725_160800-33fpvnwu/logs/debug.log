@@ -1,0 +1,84 @@
+2025-07-25 16:08:00,419 INFO    MainThread:2875356 [wandb_setup.py:_flush():80] Current SDK version is 0.21.0
+2025-07-25 16:08:00,419 INFO    MainThread:2875356 [wandb_setup.py:_flush():80] Configure stats pid to 2875356
+2025-07-25 16:08:00,419 INFO    MainThread:2875356 [wandb_setup.py:_flush():80] Loading settings from /home/vortek/.config/wandb/settings
+2025-07-25 16:08:00,419 INFO    MainThread:2875356 [wandb_setup.py:_flush():80] Loading settings from /mnt/caches/vortek/DPODataMatter/wandb/settings
+2025-07-25 16:08:00,419 INFO    MainThread:2875356 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2025-07-25 16:08:00,420 INFO    MainThread:2875356 [wandb_init.py:setup_run_log_directory():703] Logging user logs to /mnt/caches/vortek/DPODataMatter/wandb/run-20250725_160800-33fpvnwu/logs/debug.log
+2025-07-25 16:08:00,420 INFO    MainThread:2875356 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to /mnt/caches/vortek/DPODataMatter/wandb/run-20250725_160800-33fpvnwu/logs/debug-internal.log
+2025-07-25 16:08:00,420 INFO    MainThread:2875356 [wandb_init.py:init():830] calling init triggers
+2025-07-25 16:08:00,420 INFO    MainThread:2875356 [wandb_init.py:init():835] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-07-25 16:08:00,420 INFO    MainThread:2875356 [wandb_init.py:init():871] starting backend
+2025-07-25 16:08:00,632 INFO    MainThread:2875356 [wandb_init.py:init():874] sending inform_init request
+2025-07-25 16:08:00,636 INFO    MainThread:2875356 [wandb_init.py:init():882] backend started and connected
+2025-07-25 16:08:00,638 INFO    MainThread:2875356 [wandb_init.py:init():953] updated telemetry
+2025-07-25 16:08:00,646 INFO    MainThread:2875356 [wandb_init.py:init():977] communicating run to backend with 90.0 second timeout
+2025-07-25 16:08:31,602 INFO    Thread-2 (wrapped_target):2875356 [retry.py:__call__():173] [no run ID] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/urllib3/connectionpool.py", line 773, in urlopen
+    self._prepare_proxy(conn)
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1042, in _prepare_proxy
+    conn.connect()
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/urllib3/connection.py", line 770, in connect
+    self._tunnel()
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/http/client.py", line 939, in _tunnel
+    (version, code, message) = response._read_status()
+                               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/http/client.py", line 286, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/socket.py", line 718, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/urllib3/connectionpool.py", line 775, in urlopen
+    self._raise_timeout(
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Read timed out. (read timeout=20)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 397, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/requests/adapters.py", line 713, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api.wandb.ai', port=443): Read timed out. (read timeout=20)

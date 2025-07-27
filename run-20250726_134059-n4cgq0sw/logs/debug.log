@@ -1,0 +1,37 @@
+2025-07-26 13:40:59,939 INFO    MainThread:3012652 [wandb_setup.py:_flush():80] Current SDK version is 0.21.0
+2025-07-26 13:40:59,939 INFO    MainThread:3012652 [wandb_setup.py:_flush():80] Configure stats pid to 3012652
+2025-07-26 13:40:59,939 INFO    MainThread:3012652 [wandb_setup.py:_flush():80] Loading settings from /home/vortek/.config/wandb/settings
+2025-07-26 13:40:59,939 INFO    MainThread:3012652 [wandb_setup.py:_flush():80] Loading settings from /mnt/caches/vortek/DPODataMatter/wandb/settings
+2025-07-26 13:40:59,939 INFO    MainThread:3012652 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2025-07-26 13:40:59,939 INFO    MainThread:3012652 [wandb_init.py:setup_run_log_directory():703] Logging user logs to /mnt/caches/vortek/DPODataMatter/wandb/run-20250726_134059-n4cgq0sw/logs/debug.log
+2025-07-26 13:40:59,939 INFO    MainThread:3012652 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to /mnt/caches/vortek/DPODataMatter/wandb/run-20250726_134059-n4cgq0sw/logs/debug-internal.log
+2025-07-26 13:40:59,939 INFO    MainThread:3012652 [wandb_init.py:init():830] calling init triggers
+2025-07-26 13:40:59,939 INFO    MainThread:3012652 [wandb_init.py:init():835] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-07-26 13:40:59,939 INFO    MainThread:3012652 [wandb_init.py:init():871] starting backend
+2025-07-26 13:41:00,152 INFO    MainThread:3012652 [wandb_init.py:init():874] sending inform_init request
+2025-07-26 13:41:00,156 INFO    MainThread:3012652 [wandb_init.py:init():882] backend started and connected
+2025-07-26 13:41:00,158 INFO    MainThread:3012652 [wandb_init.py:init():953] updated telemetry
+2025-07-26 13:41:00,167 INFO    MainThread:3012652 [wandb_init.py:init():977] communicating run to backend with 90.0 second timeout
+2025-07-26 13:41:17,602 WARNING MainThread:3012652 [wandb_init.py:init():1610] [no run ID] interrupted
+Traceback (most recent call last):
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 1606, in init
+    return wi.init(run_settings, run_config, run_printer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 996, in init
+    result = wait_with_progress(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/wandb/sdk/mailbox/wait_with_progress.py", line 24, in wait_with_progress
+    return wait_all_with_progress(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/wandb/sdk/mailbox/wait_with_progress.py", line 87, in wait_all_with_progress
+    return asyncio_compat.run(progress_loop_with_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/site-packages/wandb/sdk/lib/asyncio_compat.py", line 30, in run
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/concurrent/futures/_base.py", line 451, in result
+    self._condition.wait(timeout)
+  File "/home/vortek/.conda/envs/dpo/lib/python3.11/threading.py", line 327, in wait
+    waiter.acquire()
+KeyboardInterrupt
